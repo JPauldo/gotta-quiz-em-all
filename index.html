@@ -9,6 +9,33 @@
   <title>Gotta Quiz 'Em All</title>
 </head>
 <body>
+  <header>
+    <a href=""><h2>Scores</h2></a>
+    <h2>Timer</h2>
+  </header>
+  <main>
+    <section id="quiz-start" class="show">
+      <h1>Quiz Title</h1>
+      <p>This is the quiz start.</p>
+      <button id="start-button">Press Me</button>
+    </section>
+    <section id="quiz-questions" class="hide">
+      <p>I'm the next section.</p>
+      <section>
+        <ol>
+          <li>Option #1</li>
+          <li>Option #2</li>
+          <li>Option #3</li>
+          <li>Option #4</li>
+        </ol>
+      </section>
+    </section>
+    <section id="quiz-end" class="hide">
+      <h1>Quiz Ended</h1>
+      <input type="text">
+      <button id="restart-button">Submit</button>
+    </section>
+  </main>
   <script src="./script.js"></script>
 </body>
 </html>
