@@ -7,11 +7,12 @@ var footnote = document.body.getElementsByTagName("footer")[0];
 var quizEnd = document.querySelector("#quiz-end");
 var restartButton = document.querySelector("#restart-button");
 
+var timeLeft;
+var timer;
 var questionsLeft;
 var quizQuestions;
 var qFormat;
-var timeLeft;
-var timer;
+var finalScore;
 
 function getQuestions() {
   quizQuestions = [
@@ -44,6 +45,7 @@ function getQuestions() {
 }
 
 function endQuiz() {
+  finalScore = timeLeft;
   quizEnd.getElementsByTagName("p")[0].append(timeLeft);
   quizSection.setAttribute("class", "hide");
   quizEnd.setAttribute("class", "show");
@@ -137,6 +139,24 @@ function clicked(evt) {
   }
 }
 
+function submitScore() {
+  var name = document.body.getElementsByTagName("input")[0];
+  console.log(document.body.getElementsByTagName("input")[0].value);
+  if([...name.value].length < 3) {
+    window.alert("Please enter 3 characters.")
+  }
+  else {
+    var scoreEntry = {
+      name: name.value,
+      score: finalScore
+    };
+    scores.push(scoreEntry);
+    scores.sort((a, b) => b.score - a.score);
+    scores.splice(maxScores);
+    localStorage.setItem(scoreStorage, JSON.stringify(scores));
+  }
+}
+
 function restartQuiz(evt) {
   header.children[1].textContent = "Timer"
   quizEnd.setAttribute("class", "hide");
@@ -145,5 +165,6 @@ function restartQuiz(evt) {
 
 startButton.addEventListener("click", startQuiz);
 questionList.addEventListener("click", clicked);
-restartButton.addEventListener("click", restartQuiz);
+restartButton.addEventListener("click", submitScore);
+clearButton.addEventListener("click", clearScores);
 
