@@ -1,14 +1,17 @@
-var startButton = document.querySelector("#start-button");
-var restartButton = document.querySelector("#restart-button")
+var header = document.body.getElementsByTagName("header")[0];
 var quizStart = document.querySelector("#quiz-start");
+var startButton = document.querySelector("#start-button");
 var quizSection = document.querySelector("#quiz-questions");
-var quizEnd = document.querySelector("#quiz-end");
 var questionList = quizSection.children[1].children[0];
+var footnote = document.body.getElementsByTagName("footer")[0];
+var quizEnd = document.querySelector("#quiz-end");
+var restartButton = document.querySelector("#restart-button");
 
 var questionsLeft;
-
 var quizQuestions;
 var qFormat;
+var timeLeft;
+var timer;
 
 function getQuestions() {
   quizQuestions = [
@@ -40,16 +43,8 @@ function getQuestions() {
   ];
 }
 
-function startQuiz() {
-  quizStart.setAttribute("class", "hide");
-  quizSection.setAttribute("class", "show");
-  questionsLeft = 3;
-
-  getQuestions();
-  setQuiz();
-}
-
 function endQuiz() {
+  quizEnd.getElementsByTagName("p")[0].append(timeLeft);
   quizSection.setAttribute("class", "hide");
   quizEnd.setAttribute("class", "show");
 }
@@ -66,16 +61,84 @@ function setQuiz() {
   quizQuestions.splice(qIndex, 1);
 }
 
+function clearClock() {
+  clearInterval(timer);
+  header.children[1].textContent = "Timer: 0";
+}
+
+function setClock() {
+  header.children[1].textContent = "Timer: " + timeLeft;
+  timer = setInterval(() => {
+    timeLeft--;
+    header.children[1].textContent = "Timer: " + timeLeft;
+    if (timeLeft === 0) {
+      clearClock();
+      endQuiz();
+    }
+  }, 1000);
+}
+
+function quizReset() {
+  quizEnd.getElementsByTagName("p")[0].textContent = "Your final score: ";
+  questionsLeft = 3;
+  timeLeft = 30;
+
+  getQuestions();
+  setClock();
+}
+
+function startQuiz() {
+  quizStart.setAttribute("class", "hide");
+  quizSection.setAttribute("class", "show");
+  quizReset();
+  setQuiz();
+}
+
+function feedbackDisplay() {
+  var displayTime = 1;
+  footnote.setAttribute("style", "display: flex;");
+  
+  var footTime = setInterval(() => {
+    displayTime--;
+    if (displayTime === 0) {
+      footnote.setAttribute("style", "display: none;");
+      clearInterval(footTime);
+    }
+  }, 1000);
+}
+
+function checkAnswer(response) {
+  if(response === qFormat.correct) {
+    console.log(footnote.children[0]);
+    footnote.children[0].textContent = "Correct!"
+    feedbackDisplay();
+  }
+  else {
+    footnote.children[0].textContent = "Wrong!"
+    feedbackDisplay();
+    if(timeLeft > 10) {
+      timeLeft -= 10;
+    }
+    else {
+      timeLeft = 0;
+    }
+    
+  }
+}
+
 function clicked(evt) {
   questionsLeft--;
-  if (questionsLeft === 0) {
-    endQuiz();
-  } else {
+  checkAnswer(evt.target.textContent);
+  if (questionsLeft !== 0 && timeLeft > 0) {
     setQuiz();
+  } else {
+    clearClock();
+    endQuiz();
   }
 }
 
 function restartQuiz(evt) {
+  header.children[1].textContent = "Timer"
   quizEnd.setAttribute("class", "hide");
   quizStart.setAttribute("class", "show");
 }

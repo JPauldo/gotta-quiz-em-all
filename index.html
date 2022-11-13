@@ -11,13 +11,13 @@
 <body>
   <header>
     <a href=""><h2>Scores</h2></a>
-    <h2>Time</h2>
+    <h2>Timer</h2>
   </header>
   <main>
     <section id="quiz-start" class="show">
       <h1>Quiz Title</h1>
       <p>This is the quiz start.</p>
-      <button id="start-button">Press Me</button>
+      <button id="start-button">Quiz Start!</button>
     </section>
     <section id="quiz-questions" class="hide">
       <p>I'm the next section.</p>
@@ -31,11 +31,15 @@
       </section>
     </section>
     <section id="quiz-end" class="hide">
-      <h1>Your Final Score: </h1>
-      <input type="text">
+      <h1>Mission Complete!</h1>
+      <p>Your final score: </p>
+      <input type="text" maxlength="3">
       <button id="restart-button">Submit</button>
     </section>
   </main>
+  <footer>
+    <h2></h2>
+  </footer>
   <script src="./script.js"></script>
 </body>
 </html>
