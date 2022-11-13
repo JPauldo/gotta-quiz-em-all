@@ -9,7 +9,7 @@ var scores = JSON.parse(scoreJson) ?? [];
 var bottomScore = scores[maxScores - 1]?.score ?? 0;
 
 function clearScores() {
-  localStorage.clear();
+  localStorage.removeItem(scores);
 }
 
 function displayScores() {

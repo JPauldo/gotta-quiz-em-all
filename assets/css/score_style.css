@@ -1,0 +1,14 @@
+body {
+  background: #F0F8FF;
+  color: #05075A;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+}
+li {
+  background: #AFAFAF;
+}
+
+li:nth-child(odd) {
+  background-color: #FA86FA;
+}

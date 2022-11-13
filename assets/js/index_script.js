@@ -152,7 +152,7 @@ function submitScore() {
     };
     scores.push(scoreEntry);
     scores.sort((a, b) => b.score - a.score);
-    scores.splice(maxScores);
+    // scores.splice(maxScores);
     localStorage.setItem(scoreStorage, JSON.stringify(scores));
   }
 }
