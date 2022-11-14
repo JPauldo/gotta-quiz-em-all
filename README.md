@@ -29,11 +29,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Below is the person who helped me to construct the high score page and their blog:
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+[Michael Karén](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68)
 
 ## License
 

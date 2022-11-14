@@ -51,6 +51,11 @@ footer > h2 {
   border: 2px dashed #9198e5;
   border-radius: 25px;
   padding: 20px;
+  text-align: center;
+}
+
+#quiz-start > h1 {
+  margin: 0;
 }
 
 #quiz-questions {
@@ -72,10 +77,10 @@ input {
 
 ol {
   padding-inline-start: 0px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
+  width: 100%;
 }
 
 ol > li {
@@ -83,7 +88,6 @@ ol > li {
   border: 2px solid #d1d3ee;
   border-radius: 25px;
   color: #F0F8FF;
-  flex: 0 0 40%;
   list-style: none;
   padding: 5px 5px;
   margin: 5px 5px;

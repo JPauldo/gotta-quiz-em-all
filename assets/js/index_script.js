@@ -9,39 +9,16 @@ var restartButton = document.querySelector("#restart-button");
 
 var timeLeft;
 var timer;
+var defaultQuiz = "coding";
 var questionsLeft;
-var quizQuestions;
+var questions;
 var qFormat;
 var finalScore;
 
-function getQuestions() {
-  quizQuestions = [
-    {
-      question: "Which one is wrong?",
-      choices: ["Correct", "Correct", "Wrong", "Correct"],
-      correct: "Wrong"
-    },
-    {
-      question: "Which one is correct?",
-      choices: ["Wrong", "Correct", "Wrong", "Wrong"],
-      correct: "Correct"
-    },
-    {
-      question: "It's black, it's ___.",
-      choices: ["Orange", "Magenta", "Black", "White"],
-      correct: "White"
-    },
-    {
-      question: "Ain't nobody got ___ for that!",
-      choices: ["Time", "Jello", "Money", "Life"],
-      correct: "Time"
-    },
-    {
-      question: "Wake up in the morning feeling ___.",
-      choices: ["Like Madonna", "I'm dead", "Like P. Diddy", "Refreshed"],
-      correct: "Like P. Diddy"
-    }
-  ];
+function getQuestions(quizType) {
+  console.log(quizType);
+  console.log(quizQuestions[quizType]);
+  questions = quizQuestions[quizType];
 }
 
 function endQuiz() {
@@ -52,15 +29,15 @@ function endQuiz() {
 }
 
 function setQuiz() {
-  var qIndex = Math.floor(Math.random() * quizQuestions.length);
-  qFormat = quizQuestions[qIndex];
+  var qIndex = Math.floor(Math.random() * questions.length);
+  qFormat = questions[qIndex];
   quizSection.getElementsByTagName("p")[0].textContent = qFormat.question;
   
   for (let i = 0; i < questionList.children.length; i++) {
     questionList.children[i].textContent = qFormat.choices[i];
   }
   
-  quizQuestions.splice(qIndex, 1);
+  questions.splice(qIndex, 1);
 }
 
 function clearClock() {
@@ -82,10 +59,10 @@ function setClock() {
 
 function quizReset() {
   quizEnd.getElementsByTagName("p")[0].textContent = "Your final score: ";
-  questionsLeft = 3;
-  timeLeft = 30;
+  questionsLeft = 5;
+  timeLeft = 60;
 
-  getQuestions();
+  getQuestions(defaultQuiz);
   setClock();
 }
 
@@ -157,14 +134,16 @@ function submitScore() {
   }
 }
 
-function restartQuiz(evt) {
-  header.children[1].textContent = "Timer"
+function checkScores() {
+  submitScore();
+  header.children[1].textContent = "Timer";
+  window.location.replace("../pages/high_scores.html");
   quizEnd.setAttribute("class", "hide");
   quizStart.setAttribute("class", "show");
 }
 
 startButton.addEventListener("click", startQuiz);
 questionList.addEventListener("click", clicked);
-restartButton.addEventListener("click", submitScore);
+restartButton.addEventListener("click", checkScores);
 clearButton.addEventListener("click", clearScores);
 
