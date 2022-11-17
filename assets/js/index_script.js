@@ -105,7 +105,6 @@ function feedbackDisplay() {
 // Checks if answer was correct or not
 function checkAnswer(response) {
   if(response === qFormat.correct) {
-    console.log(footnote.children[0]);
     footnote.children[0].textContent = "Correct!"
     feedbackDisplay();
   }
@@ -175,5 +174,6 @@ function checkScores() {
 startButton.addEventListener("click", startQuiz);
 questionList.addEventListener("click", nextQuestion);
 restartButton.addEventListener("click", checkScores);
-clearButton.addEventListener("click", clearScores);
 
+// Functions to run on page load
+checkLocalScores();

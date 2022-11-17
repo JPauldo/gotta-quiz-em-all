@@ -42,5 +42,4 @@ returnButton.addEventListener("click", returnToIndex);
 clearButton.addEventListener("click", clearScores);
 
 // Functions to run on page load
-checkLocalScores();
 displayScores();

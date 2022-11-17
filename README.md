@@ -1,60 +1,33 @@
 # Gotta Quiz 'Em All
-Gotta Quiz 'Em All is a site designed to help young developers sure up their knowledge for an interview.
+Gotta Quiz 'Em All is a site designed to provide quizzes around fun trivia on topics such as coding and gaming. It will time the player through through the quiz and provide them a score based on how fast they were able to complete it. The questions are randomized for each playthrough to increase replayability. Upon score submission, the player is tajen to the High Score page. Here they can either reflect on their past score(s) or use as motivation to score better next time. They can also clear all scores, if desired. 
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+This project was a chance to create a fun little application that helped me to become more comfortable with Javascript. Setting intervals as well as storing data into local storage were just some of the techniques I used to create this project. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Below is a demo of Gotta Quiz 'Em All:
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+![A step-by-step guide through a quiz and score submission](./assets/images/gotta-quiz-em-all-demo.gif)
 
 ## Credits
 
-Below is the person who helped me to construct the high score page and their blog:
+Shout to Eric for helping me to brainstorm the ideas for this project:
+
+[Eric Kim]()
+
+Shout to Avani for helping me work through the High Score page:
+
+[Avani Muchhala](https://github.com/AvaniMuchhala)
+
+Below is the person who helped me to construct the High Score page and their blog:
 
 [Michael Karén](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68)
 
+Below are the links to were I got 
+
+[Pixalbay: Correct Choice](https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=43861)
+[Pixalbay: Wrong Buzzer](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6268)
+
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+[MIT License](https://github.com/JPauldo/gotta-quiz-em-all/blob/main/LICENSE).
