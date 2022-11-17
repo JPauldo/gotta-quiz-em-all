@@ -1,0 +1,117 @@
+/* General Layout
+   ========================================================================== */
+
+/* Sets the background, font and text color for the page */
+body {
+  background: #F0F8FF;
+  color: #05075A;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Spaces the header's children */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+/* Centers the sections */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Keeps the footer hidden until needed */
+footer {
+  display: none;
+  justify-content: center;
+  margin: 1em;
+}
+
+/* Adds color to the feedback text to make it pop */
+footer > h2 {
+  border-top: 2px solid #6A75EC;
+  width: 550px;
+}
+
+/* Adjusts anchor takse to make page text color and removes the underline */
+a {
+  color: #05075A;
+  text-decoration: none;
+}
+
+/* Makes the link anchor tags pop when user hovers */
+a:hover {
+  color: #0A0CA1;
+  cursor: pointer;
+  text-shadow: 1px 1px #D1D3EE;
+
+}
+
+/* Setup for display of buttons */
+ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline-start: 0px;
+  width: 100%;
+}
+
+/* Transforms list items into buttons */
+ol > li {
+  background-color: #6a75ec;
+  border: 2px solid #d1d3ee;
+  border-radius: 25px;
+  color: #F0F8FF;
+  list-style: none;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  text-align: center;
+}
+
+/* Provides visual feedback for the chosen answer's button */
+li:hover {
+  background-color: #858eeb;
+  cursor: pointer;
+  text-shadow: 1px 1px #d1d3ee;
+}
+
+/* Forces all inouts to be uppercase */
+input {
+  margin: 1em;
+  text-transform: uppercase;
+}
+
+/* Classes
+   ========================================================================== */
+
+/* Hides the Section until needed */
+.hide {
+  display: none;
+}
+
+/* Generic display for each section of the quiz */
+.show {
+  align-items: center;
+  border: 2px dashed #9198e5;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: center;
+  padding: 20px;
+  width: 500px;
+}
+
+
+/* IDs
+   ========================================================================== */
+
+/* Centers the text of the paragrqaph in the starting section */
+#quiz-start {
+  text-align: center;
+}
+
+/* Removes margin from quiz-start's title */
+#quiz-start > h1 {
+  margin: 0;
+}
