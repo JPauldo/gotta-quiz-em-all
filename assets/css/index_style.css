@@ -1,88 +1,62 @@
+/* General Layout
+   ========================================================================== */
+
+/* Sets the background, font and text color for the page */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  /* background: linear-gradient(#e66465, #9198e5); */
   background: #F0F8FF;
-  /* background-attachment: fixed; */
   color: #05075A;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Spaces the header's children */
 header {
   display: flex;
   justify-content: space-between;
   padding: 0 1em;
 }
 
-a {
-  color: #05075A;
-  text-decoration: none;
-}
-
+/* Centers the sections */
 main {
   display: flex;
   justify-content: center;
 }
 
-.hide {
-  display: none;
-  color: #e66465;
-}
-
-.show {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 250px;
-  justify-content: center;
-  width: 500px;
-}
-
+/* Keeps the footer hidden until needed */
 footer {
   display: none;
   justify-content: center;
   margin: 1em;
 }
 
+/* Adds color to the feedback text to make it pop */
 footer > h2 {
   border-top: 2px solid #6A75EC;
   width: 550px;
 }
 
-#quiz-start {
-  border: 2px dashed #9198e5;
-  border-radius: 25px;
-  padding: 20px;
-  text-align: center;
+/* Adjusts anchor takse to make page text color and removes the underline */
+a {
+  color: #05075A;
+  text-decoration: none;
 }
 
-#quiz-start > h1 {
-  margin: 0;
+/* Makes the link anchor tags pop when user hovers */
+a:hover {
+  color: #0A0CA1;
+  cursor: pointer;
+  text-shadow: 1px 1px #D1D3EE;
+
 }
 
-#quiz-questions {
-  border: 2px dashed #9198e5;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-#quiz-end {
-  border: 2px dashed #9198e5;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-input {
-  margin: 1em;
-  text-transform: uppercase;
-}
-
+/* Setup for display of buttons */
 ol {
-  padding-inline-start: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
+  padding-inline-start: 0px;
   width: 100%;
 }
 
+/* Transforms list items into buttons */
 ol > li {
   background-color: #6a75ec;
   border: 2px solid #d1d3ee;
@@ -94,15 +68,50 @@ ol > li {
   text-align: center;
 }
 
-a:hover {
-  color: #0A0CA1;
-  cursor: pointer;
-  text-shadow: 1px 1px #D1D3EE;
-
-}
-
+/* Provides visual feedback for the chosen answer's button */
 li:hover {
   background-color: #858eeb;
   cursor: pointer;
   text-shadow: 1px 1px #d1d3ee;
+}
+
+/* Forces all inouts to be uppercase */
+input {
+  margin: 1em;
+  text-transform: uppercase;
+}
+
+/* Classes
+   ========================================================================== */
+
+/* Hides the Section until needed */
+.hide {
+  display: none;
+}
+
+/* Generic display for each section of the quiz */
+.show {
+  align-items: center;
+  border: 2px dashed #9198e5;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: center;
+  padding: 20px;
+  width: 500px;
+}
+
+
+/* IDs
+   ========================================================================== */
+
+/* Centers the text of the paragrqaph in the starting section */
+#quiz-start {
+  text-align: center;
+}
+
+/* Removes margin from quiz-start's title */
+#quiz-start > h1 {
+  margin: 0;
 }

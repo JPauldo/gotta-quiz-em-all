@@ -1,3 +1,7 @@
+/* General Layout
+   ========================================================================== */
+
+/* Sets the background, font and text color for page and centers it */
 body {
   background: #F0F8FF;
   color: #05075A;
@@ -5,10 +9,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
 }
+
+/* Sets background for even list items */
 li {
   background: #AFAFAF;
 }
 
+/* Sets background for odd list items */
 li:nth-child(odd) {
   background-color: #FA86FA;
 }

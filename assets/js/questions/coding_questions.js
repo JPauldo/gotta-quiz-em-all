@@ -1,3 +1,6 @@
+// TODO: Build out the quiz logic to accommodate multiple quizzes
+
+// Quiz used for testing the game
 var dummyQuiz = [
   {
     question: "Which one is wrong?",
@@ -26,6 +29,7 @@ var dummyQuiz = [
   }
 ];
 
+// Questions for coding quiz
 var codingQuiz = [
   {
     question: "Where should you place your link for your stylesheet in your HTML?",
@@ -79,6 +83,7 @@ var codingQuiz = [
   }
 ];
 
+// Questions for Pokémon Quiz
 var pokéQuiz = [
   {
     question: "Which Pokémon was the first Pokémon to be designed?",
@@ -132,7 +137,8 @@ var pokéQuiz = [
   }
 ];
 
-var gamingQuiz = [
+// Questions for Cartoon Quiz
+var cartoonsQuiz = [
   {
     question: "",
     choices: ["", "", "", ""],
@@ -185,9 +191,10 @@ var gamingQuiz = [
   }
 ];
 
+// Object for the 
 var quizQuestions = {
   test: dummyQuiz,
   coding: codingQuiz,
   pokémon: pokéQuiz,
-  gaming: gamingQuiz
+  carttoon: cartoonsQuiz
 }
