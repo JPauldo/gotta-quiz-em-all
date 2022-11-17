@@ -13,7 +13,7 @@ Below is a demo of Gotta Quiz 'Em All:
 
 Shout to Eric for helping me to brainstorm the ideas for this project:
 
-[Eric Kim]()
+[Eric Kim](https://github.com/EricKim86)
 
 Shout to Avani for helping me work through the High Score page:
 
