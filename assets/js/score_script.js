@@ -3,11 +3,15 @@ var returnButton = document.querySelector("#index-return")
 console.log(document.querySelector("#clear-scores"));
 var scoreList = document.querySelector("#high-scores")
 
-var maxScores = 20;
 var scoreStorage = "scores";
 var scoreJson = localStorage.getItem(scoreStorage);
-var scores = JSON.parse(scoreJson) ?? [];
-var bottomScore = scores[maxScores - 1]?.score ?? 0;
+var scores = JSON.parse(scoreJson);
+
+function checkLocalScores() {
+  if(scores === null) {
+    scores = [];
+  }
+}
 
 function clearScores() {
   localStorage.removeItem(scoreStorage);
@@ -15,7 +19,13 @@ function clearScores() {
 }
 
 function displayScores() {
-  scoreList.innerHTML = scores.map((score) => "<li>" + score.name + " - " + score.score).join('');
+  for (var i = 0; i < scores.length; i++) {
+    var scoreLI = document.createElement("li");
+    scoreLI.textContent = scores[i].name + " - " + scores[i].score;
+    console.log(scoreLI.textContent);
+
+    scoreList.appendChild(scoreLI);
+  }
 }
 
 function returnBack() {
@@ -24,4 +34,5 @@ function returnBack() {
 
 returnButton.addEventListener("click", returnBack);
 clearButton.addEventListener("click", clearScores);
+checkLocalScores();
 displayScores();
