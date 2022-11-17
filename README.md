@@ -31,3 +31,5 @@ Below are the links to were I got
 ## License
 
 [MIT License](https://github.com/JPauldo/gotta-quiz-em-all/blob/main/LICENSE).
+
+[Why not test your trivia knowledge?](https://jpauldo.github.io/gotta-quiz-em-all/)
