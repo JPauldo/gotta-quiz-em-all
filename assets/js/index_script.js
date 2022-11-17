@@ -165,7 +165,7 @@ function checkScores() {
   submitScore();
   
   header.children[1].textContent = "Timer";
-  window.location.replace("../pages/high_scores.html");
+  window.location.replace("./pages/high_scores.html");
   quizEnd.setAttribute("class", "hide");
   quizStart.setAttribute("class", "show");
 }
